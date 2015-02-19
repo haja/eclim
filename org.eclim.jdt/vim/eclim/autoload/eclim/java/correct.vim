@@ -98,7 +98,12 @@ function! eclim#java#correct#Correct()
   nnoremap <silent> <buffer> <cr>
     \ :call eclim#java#correct#CorrectApply()<cr>
 
+  "mapping to jump between suggestions
+  nnoremap <silent> <buffer> n :call search("^[0-9]\\+\\.[0-9]\\+:.*")<cr>
+  nnoremap <silent> <buffer> p :call search("^[0-9]\\+\\.[0-9]\\+:.*", "b")<cr>
+
   redraw | echo ""
+  echo "jump between entries using keys <n> and <p>"
 endfunction " }}}
 
 " CorrectApply() {{{
